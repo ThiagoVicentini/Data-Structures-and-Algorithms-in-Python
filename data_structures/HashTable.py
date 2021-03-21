@@ -18,3 +18,24 @@ class HashTable(object):
 
     def calculate_hash_value(self, string):
         return ord(string[0])*100 + ord(string[1]) 
+
+
+# Test cases
+if __name__ == "__main__":
+
+    # Setup
+    hash_table = HashTable()
+
+    # Test calculate_hash_value
+    print(hash_table.calculate_hash_value('UDACITY'))   # Should be 8568
+
+    # Test lookup edge case
+    print(hash_table.lookup('UDACITY'))                 # Should be -1
+
+    # Test store
+    hash_table.store('UDACITY')
+    print(hash_table.lookup('UDACITY'))                 # Should be 8568
+
+    # Test store edge case
+    hash_table.store('UDACIOUS')
+    print(hash_table.lookup('UDACIOUS'))                # Should be 8568

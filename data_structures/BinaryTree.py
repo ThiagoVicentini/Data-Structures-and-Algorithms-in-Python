@@ -30,3 +30,20 @@ class BinaryTree(object):
             traversal = self.preorder_print(start.right, traversal)
         
         return traversal
+
+# Test cases
+if __name__ == "__main__":
+
+    # Setup
+    tree = BinaryTree(1)
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    tree.root.left.left = Node(4)
+    tree.root.left.right = Node(5)
+
+    # Test search
+    print(tree.search(4))       # Should be True
+    print(tree.search(6))       # Should be False
+
+    # Test print_tree
+    tree.print_tree()           # Should be 1-2-4-5-3
